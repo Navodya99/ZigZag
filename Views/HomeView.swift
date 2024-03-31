@@ -10,10 +10,12 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         ZStack{
-            VStack{
-                HeaderView()
-                CoupenView()
-                Spacer()
+            ScrollView{
+                VStack{
+                    HeaderView()
+                    CoupenView()
+                    FeatureCollectionView()
+                }
             }
            
         }
@@ -66,6 +68,51 @@ struct CoupenView : View {
         
     }
 }
+
+struct FeatureCollectionView : View {
+    var body: some View{
+        VStack(spacing : 0){
+            FeatureItemView(imageName: "f1")
+            FeatureItemView(imageName: "f2")
+            FeatureItemView(imageName: "f3")
+
+        }
+    }
+}
+
+struct FeatureItemView : View {
+    @State var imageName : String
+    var body: some View{
+        ZStack{
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+            VStack(){
+                Spacer()
+                HStack{
+                    Spacer()
+                    Text("In Stock")
+                        .padding(.horizontal, 15)
+                        .padding(.vertical,5)
+                        .background(Color("SplashBlue"))
+                        .cornerRadius(20)
+                        .foregroundColor(.white)
+                        .fontWeight(.medium)
+
+                }
+            }
+           
+            .padding()
+
+            
+               
+        }
+        
+        .frame(maxWidth: UIScreen.main.bounds.width)
+
+    }
+}
+
 
 #Preview {
     HomeView()
