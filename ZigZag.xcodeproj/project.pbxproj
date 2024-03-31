@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		132B58E22BB97C63008E4114 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B58E12BB97C63008E4114 /* SplashView.swift */; };
+		132B58E42BB9ADC0008E4114 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B58E32BB9ADC0008E4114 /* HomeView.swift */; };
 		13DFFCAA2BB9614000FF088D /* ZigZagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFFCA92BB9614000FF088D /* ZigZagApp.swift */; };
 		13DFFCAC2BB9614000FF088D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFFCAB2BB9614000FF088D /* ContentView.swift */; };
 		13DFFCAE2BB9614100FF088D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DFFCAD2BB9614100FF088D /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		132B58E12BB97C63008E4114 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		132B58E32BB9ADC0008E4114 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		13DFFCA62BB9614000FF088D /* ZigZag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZigZag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DFFCA92BB9614000FF088D /* ZigZagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZigZagApp.swift; sourceTree = "<group>"; };
 		13DFFCAB2BB9614000FF088D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				132B58E12BB97C63008E4114 /* SplashView.swift */,
+				132B58E32BB9ADC0008E4114 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DFFCAC2BB9614000FF088D /* ContentView.swift in Sources */,
+				132B58E42BB9ADC0008E4114 /* HomeView.swift in Sources */,
 				13DFFCAA2BB9614000FF088D /* ZigZagApp.swift in Sources */,
 				132B58E22BB97C63008E4114 /* SplashView.swift in Sources */,
 			);
