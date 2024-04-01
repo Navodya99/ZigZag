@@ -5,14 +5,16 @@
 //  Created by Navodya Weerasooriya on 2024-04-02.
 //
 
-import SwiftUI
+import Foundation
 
-struct ProductModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    ProductModel()
+struct ClothingItem: Identifiable {
+    var id = UUID()
+    var name: String
+    var description: String
+    var size: [String]
+    var price: Double
+    var type: String
+    var color: String
+    var imageName: String
+    var date: Date
 }
