@@ -7,14 +7,24 @@
 
 import Foundation
 
-struct ClothingItem: Identifiable {
-    var id = UUID()
-    var name: String
+struct ProductModel: Identifiable, Decodable {
+    var id: String
+    var itemName: String
     var description: String
-    var size: [String]
+    var size: String
     var price: Double
     var type: String
     var color: String
     var imageName: String
-    var date: Date
+
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case itemName = "itemName"
+        case description = "description"
+        case size = "size"
+        case price = "price"
+        case type = "type"
+        case color = "color"
+        case imageName = "imageName"
+    }
 }

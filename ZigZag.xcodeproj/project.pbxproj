@@ -12,6 +12,7 @@
 		132B58E62BBB07BF008E4114 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B58E52BBB07BF008E4114 /* SearchView.swift */; };
 		132B58E92BBB6797008E4114 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B58E82BBB6797008E4114 /* ProductModel.swift */; };
 		132B58EB2BBC5424008E4114 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132B58EA2BBC5424008E4114 /* DetailView.swift */; };
+		13664B6D2BC0D02E00BCB57D /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13664B6C2BC0D02E00BCB57D /* ProductViewModel.swift */; };
 		13DFFCAA2BB9614000FF088D /* ZigZagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFFCA92BB9614000FF088D /* ZigZagApp.swift */; };
 		13DFFCAC2BB9614000FF088D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFFCAB2BB9614000FF088D /* ContentView.swift */; };
 		13DFFCAE2BB9614100FF088D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DFFCAD2BB9614100FF088D /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		132B58E52BBB07BF008E4114 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		132B58E82BBB6797008E4114 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		132B58EA2BBC5424008E4114 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		13664B6C2BC0D02E00BCB57D /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		13DFFCA62BB9614000FF088D /* ZigZag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZigZag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DFFCA92BB9614000FF088D /* ZigZagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZigZagApp.swift; sourceTree = "<group>"; };
 		13DFFCAB2BB9614000FF088D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,9 +102,18 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		13664B6B2BC0D00000BCB57D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				13664B6C2BC0D02E00BCB57D /* ProductViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		13DFFC9D2BB9614000FF088D = {
 			isa = PBXGroup;
 			children = (
+				13664B6B2BC0D00000BCB57D /* ViewModels */,
 				132B58E72BBB676A008E4114 /* Models */,
 				132B58E02BB97C36008E4114 /* View */,
 				13DFFCA82BB9614000FF088D /* ZigZag */,
@@ -246,6 +257,9 @@
 				Base,
 			);
 			mainGroup = 13DFFC9D2BB9614000FF088D;
+			packageReferences = (
+				13664B6E2BC0D10600BCB57D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 13DFFCA72BB9614000FF088D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,6 +308,7 @@
 				132B58EB2BBC5424008E4114 /* DetailView.swift in Sources */,
 				132B58E42BB9ADC0008E4114 /* HomeView.swift in Sources */,
 				13DFFCAA2BB9614000FF088D /* ZigZagApp.swift in Sources */,
+				13664B6D2BC0D02E00BCB57D /* ProductViewModel.swift in Sources */,
 				132B58E22BB97C63008E4114 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,6 +633,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		13664B6E2BC0D10600BCB57D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 13DFFC9E2BB9614000FF088D /* Project object */;
 }

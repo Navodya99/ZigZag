@@ -11,35 +11,25 @@ import SwiftUI
 struct SearchView: View {
     @State var searchString: String = ""
     @State private var selectedFilterIndex: Int?
+    @ObservedObject var viewModel = ProductViewModel() // Add ViewModel here
 
-    let filterItems = ["T-shirts", "Shorts", "Pants", "Frocks", "Denims"]
-    
-    // Sample clothing items
-    let sampleClothingItems: [ClothingItem] = [
-        ClothingItem(name: "T-shirt 1", description: "Description of T-shirt 1", size: ["S", "M", "L"], price: 2000.00, type: "T-shirts", color: "Blue", imageName: "f1", date: Date()),
-        ClothingItem(name: "Shorts 1", description: "Description of Shorts 1", size: ["S", "M", "L"], price: 3000.0, type: "Shorts", color: "Black", imageName: "f2", date: Date()),
-        ClothingItem(name: "Pants 1", description: "Description of Pants 1", size: ["S", "M", "L"], price: 40000.0, type: "Pants", color: "Gray", imageName: "f3", date: Date()),
-        ClothingItem(name: "T-shirt 2", description: "Description of T-shirt 1", size: ["S", "M", "L"], price: 2000.00, type: "T-shirts", color: "Blue", imageName: "f1", date: Date()),
-        ClothingItem(name: "Shorts 2", description: "Description of Shorts 1", size: ["S", "M", "L"], price: 3000.0, type: "Shorts", color: "Black", imageName: "f2", date: Date()),
-        ClothingItem(name: "Pants 2", description: "Description of Pants 1", size: ["S", "M", "L"], price: 40000.0, type: "Pants", color: "Gray", imageName: "f3", date: Date())
-      
-    ]
-    
-    var filteredClothingItems: [ClothingItem] {
+    let filterItems = ["Dress", "T-shirt", "Top", "Pants", "Frocks", "Denims"]
+
+    var filteredClothingItems: [ProductModel] {
         if let selectedFilterIndex = selectedFilterIndex {
             let filter = filterItems[selectedFilterIndex]
-            return sampleClothingItems.filter { $0.type == filter }
+            return viewModel.clothingItems.filter { $0.type == filter } // Use data from ViewModel
         } else {
-            return sampleClothingItems
+            return viewModel.clothingItems // Use data from ViewModel
         }
     }
 
-    var filteredAndSearchedItems: [ClothingItem] {
+    var filteredAndSearchedItems: [ProductModel] {
         if searchString.isEmpty {
             return filteredClothingItems
         } else {
             return filteredClothingItems.filter {
-                $0.name.lowercased().contains(searchString.lowercased()) ||
+                $0.itemName.lowercased().contains(searchString.lowercased()) ||
                 $0.description.lowercased().contains(searchString.lowercased())
             }
         }
@@ -58,11 +48,15 @@ struct SearchView: View {
                 .padding(.vertical)
             }
         }
+        .onAppear {
+            viewModel.fetchData() // Fetch data when the view appears
+        }
     }
 }
 
+
 struct ClothingItemView: View {
-    let item: ClothingItem
+    let item: ProductModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -71,7 +65,7 @@ struct ClothingItemView: View {
                 .aspectRatio(contentMode: .fit)
             
             Group{
-                Text(item.name)
+                Text(item.itemName)
                     .font(.headline)
                 Text(item.description)
                     .font(.system(size: 12))
