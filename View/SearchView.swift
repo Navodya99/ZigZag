@@ -12,7 +12,7 @@ struct SearchView: View {
     @State private var selectedFilterIndex: Int?
     @ObservedObject var viewModel = ProductViewModel() // Add ViewModel here
     
-    let filterItems = ["Dress", "T-shirt", "Top", "Pants", "Frocks", "Denims"]
+    let filterItems = ["Dress", "T-Shirt", "Top", "Pants", "Frocks", "Denims"]
     
     var filteredClothingItems: [ProductModel] {
         if let selectedFilterIndex = selectedFilterIndex {
