@@ -20,6 +20,7 @@
 		13664B7A2BC2665D00BCB57D /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13664B792BC2665D00BCB57D /* CartModel.swift */; };
 		13664B7C2BC3083B00BCB57D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13664B7B2BC3083B00BCB57D /* SignInView.swift */; };
 		13664B7E2BC3086700BCB57D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13664B7D2BC3086700BCB57D /* RegisterView.swift */; };
+		13664B802BC31D8200BCB57D /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13664B7F2BC31D8200BCB57D /* PaymentView.swift */; };
 		13DFFCAA2BB9614000FF088D /* ZigZagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFFCA92BB9614000FF088D /* ZigZagApp.swift */; };
 		13DFFCAC2BB9614000FF088D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFFCAB2BB9614000FF088D /* ContentView.swift */; };
 		13DFFCAE2BB9614100FF088D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DFFCAD2BB9614100FF088D /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		13664B792BC2665D00BCB57D /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		13664B7B2BC3083B00BCB57D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		13664B7D2BC3086700BCB57D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		13664B7F2BC31D8200BCB57D /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		13DFFCA62BB9614000FF088D /* ZigZag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZigZag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DFFCA92BB9614000FF088D /* ZigZagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZigZagApp.swift; sourceTree = "<group>"; };
 		13DFFCAB2BB9614000FF088D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				13664B752BC265F400BCB57D /* CartView.swift */,
 				13664B7B2BC3083B00BCB57D /* SignInView.swift */,
 				13664B7D2BC3086700BCB57D /* RegisterView.swift */,
+				13664B7F2BC31D8200BCB57D /* PaymentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				13664B762BC265F400BCB57D /* CartView.swift in Sources */,
 				132B58E62BBB07BF008E4114 /* SearchView.swift in Sources */,
 				13664B7E2BC3086700BCB57D /* RegisterView.swift in Sources */,
+				13664B802BC31D8200BCB57D /* PaymentView.swift in Sources */,
 				132B58E92BBB6797008E4114 /* ProductModel.swift in Sources */,
 				13DFFCAC2BB9614000FF088D /* ContentView.swift in Sources */,
 				13664B7A2BC2665D00BCB57D /* CartModel.swift in Sources */,
