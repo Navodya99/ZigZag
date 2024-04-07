@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct DetailView: View {
+    let item: ProductModel
     var body: some View {
         VStack{
             VStack(alignment: .leading){
                 ZStack{
-                    Image("f1")
+                    Image(item.imageName)
                         .resizable()
                         .scaledToFit()
                 }
                 HStack{
                     Spacer()
-                    Text("SIZE M")
+                    Text("SIZE \(item.size)")
                         .padding(.trailing,20)
                         .foregroundStyle(Color.white)
                         .fontWeight(.semibold)
@@ -32,10 +33,10 @@ struct DetailView: View {
                     
                 }
                 
-                Text("Product Name Product Name Product Name ")
+                Text(item.itemName)
                     .font(.title)
                     .padding(.horizontal,10)
-                Text("Product Description Product Description Product Description Product Description Product Description Product Description ")
+                Text(item.description)
                     .font(.system(size: 15))
                     .padding(.horizontal,10)
                     .opacity(0.7)
@@ -53,7 +54,7 @@ struct DetailView: View {
                     Text("ADD TO CART")
                         .fontWeight(.medium)
                     Spacer()
-                    Text("LKR 7878")
+                    Text("LKR \(String(format: "%.2f", item.price))")
                         .fontWeight(.medium)
                         .opacity(0.8)
                 }
@@ -68,5 +69,5 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView()
+    DetailView(item: ProductModel(id: "1", itemName: "Sample Item", description: "Sample Description", size: "L", price: 100.0, type: "Shirt", color: "Blue", imageName: "sample_image"))
 }

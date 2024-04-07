@@ -12,9 +12,9 @@ struct SearchView: View {
     @State var searchString: String = ""
     @State private var selectedFilterIndex: Int?
     @ObservedObject var viewModel = ProductViewModel() // Add ViewModel here
-
+    
     let filterItems = ["Dress", "T-shirt", "Top", "Pants", "Frocks", "Denims"]
-
+    
     var filteredClothingItems: [ProductModel] {
         if let selectedFilterIndex = selectedFilterIndex {
             let filter = filterItems[selectedFilterIndex]
@@ -23,7 +23,7 @@ struct SearchView: View {
             return viewModel.clothingItems // Use data from ViewModel
         }
     }
-
+    
     var filteredAndSearchedItems: [ProductModel] {
         if searchString.isEmpty {
             return filteredClothingItems
@@ -34,22 +34,24 @@ struct SearchView: View {
             }
         }
     }
-
+    
     var body: some View {
-        VStack {
-            SearchBar(searchString: $searchString)
-            FilterView(filterItems: filterItems, selectedFilterIndex: $selectedFilterIndex)
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                    ForEach(filteredAndSearchedItems) { item in
-                        ClothingItemView(item: item)
+        NavigationStack{
+            VStack {
+                SearchBar(searchString: $searchString)
+                FilterView(filterItems: filterItems, selectedFilterIndex: $selectedFilterIndex)
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                        ForEach(filteredAndSearchedItems) { item in
+                            ClothingItemView(item: item)
+                        }
                     }
+                    .padding(.vertical)
                 }
-                .padding(.vertical)
             }
-        }
-        .onAppear {
-            viewModel.fetchData() // Fetch data when the view appears
+            .onAppear {
+                viewModel.fetchData() // Fetch data when the view appears
+            }
         }
     }
 }
@@ -59,24 +61,27 @@ struct ClothingItemView: View {
     let item: ProductModel
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Image(item.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+        NavigationLink(destination: DetailView(item: item)) {
             
-            Group{
-                Text(item.itemName)
-                    .font(.headline)
-                Text(item.description)
-                    .font(.system(size: 12))
-                    .opacity(0.6)
-                Text("Rs.\(String(format: "%.2f", item.price))")
-                    .font(.system(size: 15))
-                    .foregroundColor(.blue)
+            VStack(alignment: .leading) {
+                Image(item.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                Group{
+                    Text(item.itemName)
+                        .font(.headline)
+                    Text(item.description)
+                        .font(.system(size: 12))
+                        .opacity(0.6)
+                    Text("Rs.\(String(format: "%.2f", item.price))")
+                        .font(.system(size: 15))
+                        .foregroundColor(.blue)
+                }
+                .padding(.horizontal,5)
             }
-            .padding(.horizontal,5)
+            .background(Color.white)
         }
-        .background(Color.white)
     }
 }
 
