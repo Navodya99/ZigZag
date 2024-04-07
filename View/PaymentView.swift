@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PaymentView: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var cartViewModel: CartViewModel
     
     let total: Double
     @State private var name: String = ""
@@ -52,7 +53,7 @@ struct PaymentView: View {
             .padding()
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Payment Successful"), message: Text("Thank you for your purchase!"), dismissButton: .default(Text("OK")) {
-                 
+                    cartViewModel.removeAllFromCart()
                     presentationMode.wrappedValue.dismiss()
                 })
             }

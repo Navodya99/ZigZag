@@ -20,4 +20,9 @@ class CartViewModel: ObservableObject {
             cartItems.remove(at: index)
         }
     }
+    
+    func removeAllFromCart() {
+            cartItems.removeAll()
+        
+    }
 }

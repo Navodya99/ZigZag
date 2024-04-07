@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ZigZagApp: App {
+    @StateObject var cartViewModel = CartViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(cartViewModel)
         }
     }
 }

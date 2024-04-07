@@ -81,12 +81,12 @@ struct RegisterView: View {
                         
                         HStack{
                             Spacer()
-                            Text("Don't have zigzag account ?")
+                            Text("Do you hace an account?")
                                 .foregroundColor(.white)
                                 .fontWeight(.medium)
                                 .font(.system(size: 16))
                                 .opacity(0.7)
-                            Text("Register")
+                            Text("Sign In")
                                 .underline()
                                 .foregroundColor(.white)
                                 .fontWeight(.semibold)
