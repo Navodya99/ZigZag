@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct SearchView: View {
     @State var searchString: String = ""
     @State private var selectedFilterIndex: Int?
@@ -53,7 +52,9 @@ struct SearchView: View {
                 viewModel.fetchData() // Fetch data when the view appears
             }
         }
+        .tint(.black)
     }
+    
 }
 
 
@@ -67,18 +68,23 @@ struct ClothingItemView: View {
                 Image(item.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                
-                Group{
-                    Text(item.itemName)
-                        .font(.headline)
-                    Text(item.description)
-                        .font(.system(size: 12))
-                        .opacity(0.6)
-                    Text("Rs.\(String(format: "%.2f", item.price))")
-                        .font(.system(size: 15))
-                        .foregroundColor(.blue)
+                VStack(alignment : .leading){
+                        Text(item.itemName)
+                            .font(.headline)
+                            .multilineTextAlignment(.leading)
+                        Text("Size \(item.size)")
+                            .font(.system(size: 15))
+
+                        Text("Rs.\(String(format: "%.2f", item.price))")
+                            .font(.system(size: 20))
+                            .fontWeight(.semibold)
+
+                    
                 }
-                .padding(.horizontal,5)
+                .padding(.horizontal,10)
+                .frame(height: 100)
+                
+                
             }
             .background(Color.white)
         }
@@ -142,12 +148,9 @@ struct FilterButton: View {
                 .foregroundColor(isSelected ? .white : .black)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .background(isSelected ? Color.blue : Color.clear)
+                .background(isSelected ? Color("SplashBlue") : Color("CoupenColor") )
                 .cornerRadius(20)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
+                
         }
     }
 }
