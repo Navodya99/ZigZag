@@ -5,14 +5,9 @@
 //  Created by Navodya Weerasooriya on 2024-04-07.
 //
 
-import SwiftUI
+import Foundation
 
-struct CartModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    CartModel()
+struct CartItem: Identifiable {
+    let id: String
+    let item: ProductModel
 }

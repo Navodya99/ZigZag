@@ -15,6 +15,9 @@
 		13664B6D2BC0D02E00BCB57D /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13664B6C2BC0D02E00BCB57D /* ProductViewModel.swift */; };
 		13664B722BC0E0CF00BCB57D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 13664B712BC0E0CF00BCB57D /* Alamofire */; };
 		13664B742BC0E0CF00BCB57D /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 13664B732BC0E0CF00BCB57D /* AlamofireDynamic */; };
+		13664B762BC265F400BCB57D /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13664B752BC265F400BCB57D /* CartView.swift */; };
+		13664B782BC2662200BCB57D /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13664B772BC2662200BCB57D /* CartViewModel.swift */; };
+		13664B7A2BC2665D00BCB57D /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13664B792BC2665D00BCB57D /* CartModel.swift */; };
 		13DFFCAA2BB9614000FF088D /* ZigZagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFFCA92BB9614000FF088D /* ZigZagApp.swift */; };
 		13DFFCAC2BB9614000FF088D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFFCAB2BB9614000FF088D /* ContentView.swift */; };
 		13DFFCAE2BB9614100FF088D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DFFCAD2BB9614100FF088D /* Assets.xcassets */; };
@@ -48,6 +51,9 @@
 		132B58E82BBB6797008E4114 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		132B58EA2BBC5424008E4114 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		13664B6C2BC0D02E00BCB57D /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		13664B752BC265F400BCB57D /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		13664B772BC2662200BCB57D /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		13664B792BC2665D00BCB57D /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		13DFFCA62BB9614000FF088D /* ZigZag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZigZag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DFFCA92BB9614000FF088D /* ZigZagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZigZagApp.swift; sourceTree = "<group>"; };
 		13DFFCAB2BB9614000FF088D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 				132B58E32BB9ADC0008E4114 /* HomeView.swift */,
 				132B58E52BBB07BF008E4114 /* SearchView.swift */,
 				132B58EA2BBC5424008E4114 /* DetailView.swift */,
+				13664B752BC265F400BCB57D /* CartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				132B58E82BBB6797008E4114 /* ProductModel.swift */,
+				13664B792BC2665D00BCB57D /* CartModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				13664B6C2BC0D02E00BCB57D /* ProductViewModel.swift */,
+				13664B772BC2662200BCB57D /* CartViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -310,11 +319,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13664B762BC265F400BCB57D /* CartView.swift in Sources */,
 				132B58E62BBB07BF008E4114 /* SearchView.swift in Sources */,
 				132B58E92BBB6797008E4114 /* ProductModel.swift in Sources */,
 				13DFFCAC2BB9614000FF088D /* ContentView.swift in Sources */,
+				13664B7A2BC2665D00BCB57D /* CartModel.swift in Sources */,
 				132B58EB2BBC5424008E4114 /* DetailView.swift in Sources */,
 				132B58E42BB9ADC0008E4114 /* HomeView.swift in Sources */,
+				13664B782BC2662200BCB57D /* CartViewModel.swift in Sources */,
 				13DFFCAA2BB9614000FF088D /* ZigZagApp.swift in Sources */,
 				13664B6D2BC0D02E00BCB57D /* ProductViewModel.swift in Sources */,
 				132B58E22BB97C63008E4114 /* SplashView.swift in Sources */,

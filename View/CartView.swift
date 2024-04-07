@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct CartView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @EnvironmentObject var cartViewModel: CartViewModel
 
-#Preview {
-    CartView()
+    var body: some View {
+        VStack {
+            List {
+                ForEach(cartViewModel.cartItems) { cartItem in
+                    VStack {
+                        Text(cartItem.item.itemName)
+                        Text("LKR \(String(format: "%.2f", cartItem.item.price))")
+                    }
+                    .contextMenu {
+                        Button("Remove") {
+                            cartViewModel.removeFromCart(cartItem: cartItem)
+                        }
+                    }
+                }
+            }
+        }
+        .navigationTitle("Cart")
+    }
 }
